@@ -6,7 +6,7 @@ use Moo;
 
 use File::ShareDir qw( module_file );
 use Text::Template;
-use Text::Wrap qw( wrap );
+use Text::Wrap qw( wrap $columns );
 
 use experimental qw( signatures );
 
@@ -42,15 +42,21 @@ has template => (
 
 );
 
+has text_columns => (
+    is      => 'ro',
+    default => 78,
+);
+
 has text => (
     is      => 'lazy',
     builder => sub($self) {
+        $columns = $self->text_columns;
         my $raw = $self->template->fill_in(
             HASH => {
                 contact => $self->contact,
             }
         );
-        my @lines = map { wrap( "", $_ =~ /^[\*\-]/ ? "  " : "", $_ ) } split /\n/, ( $raw =~ s/  +/ /gr );
+        my @lines = map { wrap( "", $_ =~ /^[\*\-]/ ? "  " : "", $_ ) } split /\n/, ( $raw =~ s/[ ][ ]+/ /gr );
         return join( "\n", @lines );
 
     }
