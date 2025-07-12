@@ -18,4 +18,6 @@ ok $policy->template_path, "template_path";
 
 ok $policy->text, "text";
 
+note $policy->text;
+
 done_testing;
