@@ -9,6 +9,10 @@ use Text::Template;
 
 use experimental qw( signatures );
 
+has name => (
+    is => 'ro',
+);
+
 has contact => (
     is       => 'ro',
     required => 1,
