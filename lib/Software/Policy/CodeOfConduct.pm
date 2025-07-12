@@ -21,7 +21,7 @@ has contact => (
 
 has policy => (
     is      => 'ro',
-    default => 'Contributor_Covenant',
+    default => 'Contributor_Covenant_1.4',
 );
 
 has template_path => (
