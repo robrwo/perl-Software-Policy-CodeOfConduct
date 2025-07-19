@@ -30,18 +30,22 @@ This distribution generates code of conduct policies from a template.
 
 This is the (optional) name of the project that the code of conduct is for,
 
+## has\_name
+
+True if there is a name.
+
 ## contact
 
 The is the contact for the project team about the code of conduct. It should be an email address or a URL.
 
 It is required.
 
-## 
+## policy
 
 This is the policy filename. It defaults to `Contributor_Covenant_1.4` which is based on
 [https://www.contributor-covenant.org/version/1/4/code-of-conduct.html](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
 
-## 
+## template\_path
 
 This is the path to the template file. If omitted, it will assume it is an included file from ["policy"](#policy).
 

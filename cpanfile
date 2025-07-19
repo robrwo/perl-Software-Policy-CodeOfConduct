@@ -7,6 +7,7 @@ requires "Text::Template" => "0";
 requires "Text::Wrap" => "0";
 requires "Types::Common" => "0";
 requires "experimental" => "0";
+requires "namespace::autoclean" => "0";
 requires "perl" => "v5.20.0";
 
 on 'test' => sub {
