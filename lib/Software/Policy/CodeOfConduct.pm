@@ -6,13 +6,13 @@ use Moo;
 
 use File::ShareDir qw( module_file );
 use Text::Template;
-use Text::Wrap qw( wrap $columns );
+use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
 
 use experimental qw( signatures );
 
 has name => (
-    is => 'ro',
+    is        => 'ro',
     isa       => Maybe [NonEmptySimpleStr],
     predicate => 1,
 );
@@ -37,10 +37,10 @@ has template_path => (
 );
 
 has template => (
-    is      => 'lazy',
+    is       => 'lazy',
     isa      => InstanceOf ['Text::Template'],
     init_arg => undef,
-    builder => sub($self) {
+    builder  => sub($self) {
         return Text::Template->new(
             TYPE   => "FILE",
             SOURCE => $self->template_path,
