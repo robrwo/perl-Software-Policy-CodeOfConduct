@@ -7,16 +7,20 @@ use Moo;
 use File::ShareDir qw( module_file );
 use Text::Template;
 use Text::Wrap qw( wrap $columns );
+use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
 
 use experimental qw( signatures );
 
 has name => (
     is => 'ro',
+    isa       => Maybe [NonEmptySimpleStr],
+    predicate => 1,
 );
 
 has contact => (
     is       => 'ro',
     required => 1,
+    isa      => NonEmptySimpleStr,
 );
 
 has policy => (
@@ -26,6 +30,7 @@ has policy => (
 
 has template_path => (
     is      => 'lazy',
+    isa     => Maybe [NonEmptySimpleStr],
     builder => sub($self) {
         return module_file( __PACKAGE__, $self->policy . ".md.tmpl", );
     },
@@ -33,6 +38,8 @@ has template_path => (
 
 has template => (
     is      => 'lazy',
+    isa      => InstanceOf ['Text::Template'],
+    init_arg => undef,
     builder => sub($self) {
         return Text::Template->new(
             TYPE   => "FILE",
@@ -44,11 +51,13 @@ has template => (
 
 has text_columns => (
     is      => 'ro',
+    isa     => PositiveInt,
     default => 78,
 );
 
 has text => (
     is      => 'lazy',
+    isa     => NonEmptyStr,
     builder => sub($self) {
         $columns = $self->text_columns;
         my $raw = $self->template->fill_in(
