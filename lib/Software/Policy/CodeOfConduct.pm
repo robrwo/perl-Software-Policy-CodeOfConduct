@@ -1,5 +1,7 @@
 package Software::Policy::CodeOfConduct;
 
+# ABSTRACT: generate a Code of Conduct policy
+
 use v5.20;
 
 use Moo;
@@ -10,6 +12,8 @@ use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
 
 use experimental qw( signatures );
+
+our $VERSION = 'v0.1.0';
 
 =head1 SYNOPSIS
 
