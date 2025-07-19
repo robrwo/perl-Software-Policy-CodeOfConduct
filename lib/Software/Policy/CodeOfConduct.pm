@@ -36,7 +36,7 @@ has template_path => (
     },
 );
 
-has template => (
+has _template => (
     is       => 'lazy',
     isa      => InstanceOf ['Text::Template'],
     init_arg => undef,
@@ -60,7 +60,7 @@ has text => (
     isa     => NonEmptyStr,
     builder => sub($self) {
         $columns = $self->text_columns;
-        my $raw = $self->template->fill_in(
+        my $raw = $self->_template->fill_in(
             HASH => {
                 contact => $self->contact,
             }
