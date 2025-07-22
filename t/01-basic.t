@@ -13,7 +13,7 @@ use Test::File::ShareDir -share => {
 
 use Software::Policy::CodeOfConduct;
 
-ok my $policy = Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com' ), 'constructor';
+ok my $policy = Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com', name => "Bogomip" ), 'constructor';
 
 ok $policy->template_path, "template_path";
 

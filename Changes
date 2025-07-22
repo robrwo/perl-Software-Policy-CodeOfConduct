@@ -8,6 +8,9 @@ Revision history for {{$dist->name}}:
 
   - Internal code improvements.
 
+  [Bug Fixes]
+  - Added missing name attribute to the template.
+
   [Documentation]
   - Added a SUPPORT section and merged BUGS into it.
 

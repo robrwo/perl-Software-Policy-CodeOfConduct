@@ -131,7 +131,8 @@ has text => (
     builder => sub($self) {
         my $raw = $self->_template->fill_in(
             HASH => {
-                contact => $self->contact,
+               name    => $self->name,
+               contact => $self->contact,
             }
         );
 
