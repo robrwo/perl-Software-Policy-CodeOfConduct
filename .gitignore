@@ -1,5 +1,9 @@
 Software-Policy-CodeOfConduct-*
 Software-Policy-CodeOfConduct-*/
-\.build/
-cpanfile\.snapshot
+.build/
+cpanfile.snapshot
 local/
+MYMETA.*
+Makefile
+blib/
+pm_to_blib
