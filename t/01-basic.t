@@ -17,9 +17,12 @@ ok my $policy = Software::Policy::CodeOfConduct->new( contact => 'bogon@example.
 
 ok $policy->template_path, "template_path";
 
-ok $policy->text, "text";
+ok my $text = $policy->text, "text";
 
-note $policy->text;
+my $re = quotemeta( $policy->name );
+like $text, qr/\b${re}\b/, "text has the name";
+
+note $text;
 
 is $policy->filename, "CODE_OF_CONDUCT.md", "FILENAME";
 
