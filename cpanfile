@@ -3,6 +3,7 @@
 
 requires "File::ShareDir" => "0";
 requires "Moo" => "1.006000";
+requires "Path::Tiny" => "0.119";
 requires "Text::Template" => "0";
 requires "Text::Wrap" => "0";
 requires "Types::Common" => "0";
@@ -13,6 +14,7 @@ requires "perl" => "v5.20.0";
 on 'test' => sub {
   requires "File::Spec" => "0";
   requires "Module::Metadata" => "0";
+  requires "Path::Tiny" => "0.119";
   requires "Test2::V0" => "0";
   requires "Test::File::ShareDir" => "0";
   requires "Test::More" => "0";

@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added the filename attribute and the save method.
+
   [Documentation]
   - Added a SUPPORT section and merged BUGS into it.
 

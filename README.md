@@ -10,14 +10,13 @@ version v0.2.0
 
 ```perl
 my $policy = Software::Policy::CodeOfConduct->new(
-    name    => 'Foo',
-    contact => 'team-foo@example.com',
-    policy  => 'Contributor_Covenant_1.4',
+    name     => 'Foo',
+    contact  => 'team-foo@example.com',
+    policy   => 'Contributor_Covenant_1.4',
+    filename => 'CODE-OF-CONDUCT.md',
 );
 
-open my $fh, '>', "CODE-OF-CONDUCT.md" or die $!;
-print {$fh} $policy->text;
-close $fh;
+$policy->save($dir); # create CODE-OF-CONDUCT.md in $dir
 ```
 
 # DESCRIPTION
@@ -60,6 +59,24 @@ The default is `78`.
 ## text
 
 This is the text generated from the template.
+
+## filename
+
+This is the file to be generated.
+
+This defaults to `CODE_OF_CONDUCT.md`.
+
+# METHODS
+
+## save
+
+```perl
+my $path = $policy->save( $dir );
+```
+
+This saves a file named ["filename"](#filename) in directory `$dir`.
+
+If `$dir` is omitted, then it will save the file in the current directory.
 
 # SOURCE
 

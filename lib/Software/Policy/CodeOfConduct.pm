@@ -7,6 +7,7 @@ use v5.20;
 use Moo;
 
 use File::ShareDir qw( dist_file );
+use Path::Tiny 0.018 qw( cwd path );
 use Text::Template;
 use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
@@ -20,14 +21,13 @@ our $VERSION = 'v0.2.0';
 =head1 SYNOPSIS
 
     my $policy = Software::Policy::CodeOfConduct->new(
-        name    => 'Foo',
-        contact => 'team-foo@example.com',
-        policy  => 'Contributor_Covenant_1.4',
+        name     => 'Foo',
+        contact  => 'team-foo@example.com',
+        policy   => 'Contributor_Covenant_1.4',
+        filename => 'CODE-OF-CONDUCT.md',
     );
 
-    open my $fh, '>', "CODE-OF-CONDUCT.md" or die $!;
-    print {$fh} $policy->text;
-    close $fh;
+    $policy->save($dir); # create CODE-OF-CONDUCT.md in $dir
 
 =head1 DESCRIPTION
 
@@ -85,11 +85,12 @@ This should be a L<Text::Template> file.
 
 has template_path => (
     is      => 'lazy',
-    isa     => Maybe [NonEmptySimpleStr],
+    isa     => InstanceOf ['Path::Tiny'],
+    coerce  => \&path,
     builder => sub($self) {
         my $dist = __PACKAGE__;
         $dist =~ s/::/-/g;
-        return dist_file( $dist, $self->policy . ".md.tmpl", );
+        return path( dist_file( $dist, $self->policy . ".md.tmpl" ) );
     },
 );
 
@@ -141,6 +142,37 @@ has text => (
 
     }
 );
+
+=attr filename
+
+This is the file to be generated.
+
+This defaults to F<CODE_OF_CONDUCT.md>.
+
+=cut
+
+has filename => (
+    is      => 'ro',
+    isa     => NonEmptySimpleStr,
+    coerce  => sub($name) { return path($name)->basename },
+    default => 'CODE_OF_CONDUCT.md',
+);
+
+=method save
+
+    my $path = $policy->save( $dir );
+
+This saves a file named L</filename> in directory C<$dir>.
+
+If C<$dir> is omitted, then it will save the file in the current directory.
+
+=cut
+
+sub save($self, $dir = undef) {
+    my $path = path( $dir // cwd, $self->filename );
+    $path->spew_raw( $self->text );
+    return $path;
+}
 
 =head1 prepend:SUPPORT
 
