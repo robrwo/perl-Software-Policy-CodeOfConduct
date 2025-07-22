@@ -12,7 +12,7 @@ use Text::Template;
 use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
 
-use experimental qw( signatures );
+use experimental qw( lexical_subs signatures );
 
 use namespace::autoclean;
 
@@ -129,13 +129,19 @@ has text => (
     is      => 'lazy',
     isa     => NonEmptyStr,
     builder => sub($self) {
-        $columns = $self->text_columns;
         my $raw = $self->_template->fill_in(
             HASH => {
                 contact => $self->contact,
             }
         );
-        my @lines = map { wrap( "", $_ =~ /^[\*\-]/ ? "  " : "", $_ ) } split /\n/, ( $raw =~ s/[ ][ ]+/ /gr );
+
+        $columns = $self->text_columns;
+        my sub _wrap($line) {
+            return $line if $line =~ /^[ ]{4}/; # ignore preformatted code
+            return wrap( "", $line =~ /^[\*\-]/ ? "  " : "", $line =~ s/[ ][ ]+/ /gr );
+        }
+
+        my @lines = map { _wrap($_) } split /\n/, $raw;
         return join( "\n", @lines );
 
     }

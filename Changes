@@ -4,6 +4,8 @@ Revision history for {{$dist->name}}:
   [Enhancements]
   - Added the filename attribute and the save method.
 
+  - Support preformatted text in the template.
+
   - Internal code improvements.
 
   [Documentation]
