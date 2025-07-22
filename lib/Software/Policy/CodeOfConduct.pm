@@ -88,9 +88,7 @@ has template_path => (
     isa     => InstanceOf ['Path::Tiny'],
     coerce  => \&path,
     builder => sub($self) {
-        my $dist = __PACKAGE__;
-        $dist =~ s/::/-/g;
-        return path( dist_file( $dist, $self->policy . ".md.tmpl" ) );
+        return path( dist_file( __PACKAGE__ =~ s/::/-/gr , $self->policy . ".md.tmpl" ) );
     },
 );
 
