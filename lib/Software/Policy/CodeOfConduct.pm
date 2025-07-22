@@ -16,7 +16,7 @@ use experimental qw( lexical_subs signatures );
 
 use namespace::autoclean;
 
-our $VERSION = 'v0.2.1';
+our $VERSION = 'v0.3.0';
 
 =head1 SYNOPSIS
 
