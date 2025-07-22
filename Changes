@@ -6,7 +6,7 @@ Revision history for {{$dist->name}}:
 
   - Support preformatted text and initial emphasised text in the template.
 
-  - Added the Contributor Covenant 2.1 as an option.
+  - Added the Contributor Covenant 2.0 and 2.1 as options.
 
   - Internal code improvements.
 

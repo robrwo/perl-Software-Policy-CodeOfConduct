@@ -86,6 +86,8 @@ Available policies include
 
 =item "Contributor_Covenant_1.4"
 
+=item "Contributor_Covenant_2.0"
+
 =item "Contributor_Covenant_2.1"
 
 =back

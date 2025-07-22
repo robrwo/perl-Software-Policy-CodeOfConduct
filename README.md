@@ -51,6 +51,7 @@ This is the policy filename. It defaults to "Contributor\_Covenant\_1.4" which i
 Available policies include
 
 - "Contributor\_Covenant\_1.4"
+- "Contributor\_Covenant\_2.0"
 - "Contributor\_Covenant\_2.1"
 
 ## template\_path
