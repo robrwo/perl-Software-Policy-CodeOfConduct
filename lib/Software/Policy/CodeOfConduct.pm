@@ -75,6 +75,20 @@ has entity => (
     default => 'project',
 );
 
+=attr Entity
+
+A sentence-case (ucfirst) form of L</entity>.
+
+=cut
+
+has Entity => (
+    is      => 'lazy',
+    isa     => NonEmptySimpleStr,
+    builder => sub($self) {
+        return ucfirst( $self->entity );
+    },
+);
+
 =attr policy
 
 This is the policy filename. It defaults to "Contributor_Covenant_1.4" which is based on
@@ -158,6 +172,7 @@ has text => (
                 name    => $self->name,
                 contact => $self->contact,
                 entity  => $self->entity,
+                Entity  => $self->Entity,
             }
         );
 

@@ -1,6 +1,12 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Replaced `ucfirst` calls in the templates with a separate Entity attribute. ++leont
+
+  [Bug Fixes]
+  - Fixed typos in the templates. ++leont
+
   [Documentation]
   - Fixed minor typo.
 
