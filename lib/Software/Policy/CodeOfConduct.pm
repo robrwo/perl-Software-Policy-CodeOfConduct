@@ -63,6 +63,18 @@ has contact => (
     isa      => NonEmptySimpleStr,
 );
 
+=attr entity
+
+A generating name for the project. It defaults to "project" but the original templates used "community".
+
+=cut
+
+has entity => (
+    is      => 'ro',
+    isa     => NonEmptySimpleStr,
+    default => 'project',
+);
+
 =attr policy
 
 This is the policy filename. It defaults to F<Contributor_Covenant_1.4> which is based on
@@ -131,8 +143,9 @@ has text => (
     builder => sub($self) {
         my $raw = $self->_template->fill_in(
             HASH => {
-               name    => $self->name,
-               contact => $self->contact,
+                name    => $self->name,
+                contact => $self->contact,
+                entity  => $self->entity,
             }
         );
 

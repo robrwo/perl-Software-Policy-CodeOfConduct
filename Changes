@@ -2,7 +2,7 @@ Revision history for {{$dist->name}}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added the filename attribute and the save method.
+  - Added the entity and filename attributes, and the save method.
 
   - Support preformatted text in the template.
 
@@ -13,6 +13,8 @@ Revision history for {{$dist->name}}:
 
   [Documentation]
   - Added a SUPPORT section and merged BUGS into it.
+
+  - Updated the template to replace "community" with the entity attribute. (It defaults to "project".)
 
 v0.1.1    2025-07-22 11:51:17+01:00 Europe/London
   [Bug Fixes]
