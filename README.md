@@ -43,6 +43,10 @@ It is required.
 
 A generating name for the project. It defaults to "project" but the original templates used "community".
 
+## Entity
+
+A sentence-case (ucfirst) form of ["entity"](#entity).
+
 ## policy
 
 This is the policy filename. It defaults to "Contributor\_Covenant\_1.4" which is based on
