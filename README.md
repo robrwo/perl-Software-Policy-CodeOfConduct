@@ -39,6 +39,10 @@ The is the contact for the project team about the code of conduct. It should be 
 
 It is required.
 
+## entity
+
+A generating name for the project. It defaults to "project" but the original templates used "community".
+
 ## policy
 
 This is the policy filename. It defaults to "Contributor\_Covenant\_1.4" which is based on
