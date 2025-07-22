@@ -5,8 +5,8 @@ use warnings;
 use Test2::V0;
 
 use Test::File::ShareDir -share => {
-    -module => {
-        "Software::Policy::CodeOfConduct" => "share"
+    -dist => {
+        "Software-Policy-CodeOfConduct" => "share"
     }
 };
 

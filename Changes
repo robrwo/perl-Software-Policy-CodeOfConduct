@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Fix the share directory.
+
   [Documentation]
   - Fixed Changes.
 

@@ -6,7 +6,7 @@ use v5.20;
 
 use Moo;
 
-use File::ShareDir qw( module_file );
+use File::ShareDir qw( dist_file );
 use Text::Template;
 use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
@@ -87,7 +87,9 @@ has template_path => (
     is      => 'lazy',
     isa     => Maybe [NonEmptySimpleStr],
     builder => sub($self) {
-        return module_file( __PACKAGE__, $self->policy . ".md.tmpl", );
+        my $dist = __PACKAGE__;
+        $dist =~ s/::/-/g;
+        return dist_file( $dist, $self->policy . ".md.tmpl", );
     },
 );
 
