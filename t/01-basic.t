@@ -13,26 +13,36 @@ use Test::File::ShareDir -share => {
 
 use Software::Policy::CodeOfConduct;
 
-ok my $policy = Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com', name => "Bogomip" ), 'constructor';
+for my $file (qw( Contributor_Covenant_1.4 Contributor_Covenant_2.0 Contributor_Covenant_2.1 )) {
 
-ok $policy->template_path, "template_path";
+    subtest $file => sub {
 
-ok my $text = $policy->text, "text";
+        ok my $policy =
+          Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com', name => "Bogomip", policy => $file ),
+        'constructor';
 
-my $re = quotemeta( $policy->name );
-like $text, qr/\b${re}\b/, "text has the name";
+        ok $policy->template_path, "template_path";
 
-note $text;
+        ok my $text = $policy->text, "text";
 
-is $policy->filename, "CODE_OF_CONDUCT.md", "FILENAME";
+        my $re = quotemeta( $policy->name );
+        like $text, qr/\b${re}\b/, "text has the name";
 
-my $dir = tempdir();
-ok my $path = $policy->save($dir), "save";
+        note $text;
 
-ok -e $path, "file ${path} exists";
+        is $policy->filename, "CODE_OF_CONDUCT.md", "filename";
 
-is $path, path($dir, $policy->filename), "expected path";
+        my $dir = tempdir();
+        ok my $path = $policy->save($dir), "save";
 
-is $path->slurp_raw, $policy->text, "expected content";
+        ok -e $path, "file ${path} exists";
+
+        is $path, path( $dir, $policy->filename ), "expected path";
+
+        is $path->slurp_raw, $policy->text, "expected content";
+
+    };
+
+}
 
 done_testing;

@@ -12,6 +12,9 @@ Revision history for {{$dist->name}}:
   [Documentation]
   - Fixed minor typo.
 
+  [Tests]
+  - Run tests on all of the templates.
+
 v0.2.0    2025-07-22 18:13:47+01:00 Europe/London
   [Enhancements]
   - Added the entity and filename attributes, and the save method.
