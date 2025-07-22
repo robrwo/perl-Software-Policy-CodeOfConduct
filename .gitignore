@@ -2,3 +2,4 @@ Software-Policy-CodeOfConduct-*
 Software-Policy-CodeOfConduct-*/
 \.build/
 cpanfile\.snapshot
+local/
