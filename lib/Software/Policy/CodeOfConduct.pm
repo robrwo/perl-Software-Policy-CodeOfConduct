@@ -152,7 +152,7 @@ has text => (
         $columns = $self->text_columns;
         my sub _wrap($line) {
             return $line if $line =~ /^[ ]{4}/; # ignore preformatted code
-            return wrap( "", $line =~ /^[\*\-]/ ? "  " : "", $line =~ s/[ ][ ]+/ /gr );
+            return wrap( "", $line =~ /^[\*\-](?![\*\-]) ?/ ? "  " : "", $line =~ s/[ ][ ]+/ /gr );
         }
 
         my @lines = map { _wrap($_) } split /\n/, $raw;
