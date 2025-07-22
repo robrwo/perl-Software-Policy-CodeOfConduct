@@ -1,1 +1,8 @@
 Revision history for {{$dist->name}}:
+
+{{$NEXT}}
+  [Documentation]
+  - Fixed Changes.
+
+v0.1.0    2025-07-19 12:43:00+01:00 Europe/London
+  - Initial version.
