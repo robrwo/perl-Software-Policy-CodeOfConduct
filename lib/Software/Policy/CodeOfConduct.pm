@@ -8,7 +8,7 @@ use Moo;
 
 use File::ShareDir qw( dist_file );
 use Path::Tiny 0.018 qw( cwd path );
-use Text::Template;
+use Text::Template 1.48;
 use Text::Wrap    qw( wrap $columns );
 use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
 
@@ -167,13 +167,18 @@ has text => (
     is      => 'lazy',
     isa     => NonEmptyStr,
     builder => sub($self) {
+        state $c = 1;
+        my $pkg = __PACKAGE__ . "::Run_" . $c++;
         my $raw = $self->_template->fill_in(
-            HASH => {
+            PACKAGE => $pkg,
+            STRICT  => 1,
+            BROKEN  => sub(%args) { die $args{error} },
+            HASH    => {
                 name    => $self->name,
                 contact => $self->contact,
                 entity  => $self->entity,
                 Entity  => $self->Entity,
-            }
+            },
         );
 
         $columns = $self->text_columns;

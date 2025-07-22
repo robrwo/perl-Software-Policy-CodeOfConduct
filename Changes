@@ -4,6 +4,8 @@ Revision history for {{$dist->name}}:
   [Enhancements]
   - Replaced `ucfirst` calls in the templates with a separate Entity attribute. ++leont
 
+  - Enabled strict templates that throw errors.
+
   [Bug Fixes]
   - Fixed typos in the templates. ++leont
 
