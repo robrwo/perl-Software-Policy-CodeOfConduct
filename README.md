@@ -110,7 +110,7 @@ patch to an existing test-file that illustrates the bug or desired
 feature.
 
 If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
-then see `SECURITY.md` for instructions how to report security vulnerabilities
+then see `SECURITY.md` for instructions how to report security vulnerabilities.
 
 # AUTHOR
 

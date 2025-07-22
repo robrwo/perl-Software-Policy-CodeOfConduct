@@ -216,7 +216,7 @@ years.
 =head1 append:SUPPORT
 
 If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
-then see F<SECURITY.md> for instructions how to report security vulnerabilities
+then see F<SECURITY.md> for instructions how to report security vulnerabilities.
 
 =cut
 
