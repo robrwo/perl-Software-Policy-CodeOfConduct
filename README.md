@@ -41,8 +41,13 @@ It is required.
 
 ## policy
 
-This is the policy filename. It defaults to `Contributor_Covenant_1.4` which is based on
+This is the policy filename. It defaults to "Contributor\_Covenant\_1.4" which is based on
 [https://www.contributor-covenant.org/version/1/4/code-of-conduct.html](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
+
+Available policies include
+
+- "Contributor\_Covenant\_1.4"
+- "Contributor\_Covenant\_2.1"
 
 ## template\_path
 

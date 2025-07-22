@@ -77,8 +77,18 @@ has entity => (
 
 =attr policy
 
-This is the policy filename. It defaults to F<Contributor_Covenant_1.4> which is based on
+This is the policy filename. It defaults to "Contributor_Covenant_1.4" which is based on
 L<https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>.
+
+Available policies include
+
+=over
+
+=item "Contributor_Covenant_1.4"
+
+=item "Contributor_Covenant_2.1"
+
+=back
 
 =cut
 
