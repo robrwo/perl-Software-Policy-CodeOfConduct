@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+
+v0.1.1    2025-07-22 11:51:17+01:00 Europe/London
   [Bug Fixes]
   - Fix the share directory.
 
