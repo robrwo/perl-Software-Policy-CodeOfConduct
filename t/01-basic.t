@@ -23,10 +23,12 @@ for my $file (qw( Contributor_Covenant_1.4 Contributor_Covenant_2.0 Contributor_
 
         ok $policy->template_path, "template_path";
 
-        ok my $text = $policy->text, "text";
+        ok my $text = $policy->fulltext, "fulltext";
 
         my $re = quotemeta( $policy->name );
         like $text, qr/\b${re}\b/, "text has the name";
+
+        is $policy->text, $text, "text is alias";
 
         note $text;
 

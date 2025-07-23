@@ -165,13 +165,13 @@ has text_columns => (
     default => 78,
 );
 
-=method text
+=method fulltext
 
 This is the text generated from the template.
 
 =cut
 
-has text => (
+has fulltext => (
     is      => 'lazy',
     isa     => NonEmptyStr,
     init_arg => undef,
@@ -201,6 +201,14 @@ has text => (
     }
 );
 
+=method text
+
+This is a deprecated alias for L</fulltext>.
+
+=cut
+
+*text = \&fulltext;
+
 =attr filename
 
 This is the file to be generated.
@@ -229,7 +237,7 @@ If C<$dir> is omitted, then it will save the file in the current directory.
 =cut
 
     my $path = path( $dir // cwd, $self->filename );
-    $path->spew_raw( $self->text );
+    $path->spew_raw( $self->fulltext );
     return $path;
 }
 

@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Renamed text to fulltext, for compatability with similar modules. Added text as an alias.
+
   [Bug Fixes]
   - Disallowed text attribute in the constructor.
 

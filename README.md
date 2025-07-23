@@ -80,9 +80,13 @@ This defaults to `CODE_OF_CONDUCT.md`.
 
 # METHODS
 
-## text
+## fulltext
 
 This is the text generated from the template.
+
+## text
+
+This is a deprecated alias for ["fulltext"](#fulltext).
 
 ## save
 
