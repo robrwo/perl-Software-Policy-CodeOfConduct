@@ -4,7 +4,7 @@ Software::Policy::CodeOfConduct - generate a Code of Conduct policy
 
 # VERSION
 
-version v0.3.1
+version v0.3.2
 
 # SYNOPSIS
 

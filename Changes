@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+
+v0.3.1    2025-07-23 14:24:12+01:00 Europe/London
   [Bug Fixes]
   - Committed fixes in Contributor Covenant 2.1 template that were not incluided in the last release.
 
