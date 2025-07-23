@@ -198,7 +198,6 @@ has text => (
 
         my @lines = map { _wrap($_) } split /\n/, $raw;
         return join( "\n", @lines );
-
     }
 );
 
