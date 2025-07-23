@@ -208,6 +208,8 @@ has filename => (
     default => 'CODE_OF_CONDUCT.md',
 );
 
+sub save($self, $dir = undef) {
+
 =method save
 
     my $path = $policy->save( $dir );
@@ -218,7 +220,6 @@ If C<$dir> is omitted, then it will save the file in the current directory.
 
 =cut
 
-sub save($self, $dir = undef) {
     my $path = path( $dir // cwd, $self->filename );
     $path->spew_raw( $self->text );
     return $path;
