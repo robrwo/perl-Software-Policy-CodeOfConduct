@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Committed fixes in Contributor Covenant 2.1 template that were not incluided in the last release.
+
   [Documentation]
   - Adjusted wording for consistency with other documentation.
 
