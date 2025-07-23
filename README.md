@@ -104,7 +104,7 @@ Only the latest version of this module will be supported.
 This module requires Perl v5.20 or later.  Future releases may only support Perl versions released in the last ten
 years.
 
-## Reporting Bugs
+## Reporting Bugs and Submitting Feature Requests
 
 Please report any bugs or feature requests on the bugtracker website
 [https://github.com/robrwo/perl-Software-Policy-CodeOfConduct/issues](https://github.com/robrwo/perl-Software-Policy-CodeOfConduct/issues)
