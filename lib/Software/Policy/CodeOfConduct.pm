@@ -21,10 +21,10 @@ our $VERSION = 'v0.3.1';
 =head1 SYNOPSIS
 
     my $policy = Software::Policy::CodeOfConduct->new(
+        policy   => 'Contributor_Covenant_1.4',
         name     => 'Foo',
         contact  => 'team-foo@example.com',
-        policy   => 'Contributor_Covenant_1.4',
-        filename => 'CODE-OF-CONDUCT.md',
+        filename => 'CODE_OF_CONDUCT.md',
     );
 
     $policy->save($dir); # create CODE-OF-CONDUCT.md in $dir
@@ -32,6 +32,38 @@ our $VERSION = 'v0.3.1';
 =head1 DESCRIPTION
 
 This distribution generates code of conduct policies from a template.
+
+=attr policy
+
+This is the policy filename without the extension. It defaults to "Contributor_Covenant_1.4"
+.
+
+Available policies include
+
+=over
+
+=item *
+
+L<Contributor_Covenant_1.4|https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>
+
+=item *
+
+L<Contributor_Covenant_2.0|https://www.contributor-covenant.org/version/2/0/code-of-conduct.html>
+
+=item *
+
+L<Contributor_Covenant_2.1|https://www.contributor-covenant.org/version/2/1/code-of-conduct.html>
+
+=back
+
+If you want to use a custom policy, specify the L</template_path>.
+
+=cut
+
+has policy => (
+    is      => 'ro',
+    default => 'Contributor_Covenant_1.4',
+);
 
 =attr name
 
@@ -89,35 +121,11 @@ has Entity => (
     },
 );
 
-=attr policy
-
-This is the policy filename. It defaults to "Contributor_Covenant_1.4" which is based on
-L<https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>.
-
-Available policies include
-
-=over
-
-=item "Contributor_Covenant_1.4"
-
-=item "Contributor_Covenant_2.0"
-
-=item "Contributor_Covenant_2.1"
-
-=back
-
-=cut
-
-has policy => (
-    is      => 'ro',
-    default => 'Contributor_Covenant_1.4',
-);
-
 =attr template_path
 
 This is the path to the template file. If omitted, it will assume it is an included file from L</policy>.
 
-This should be a L<Text::Template> file.
+This should be a L<Text::Template> template file.
 
 =cut
 

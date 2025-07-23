@@ -4,6 +4,8 @@ Revision history for {{$dist->name}}:
   [Documentation]
   - Adjusted wording for consistency with other documentation.
 
+  - Updated the documentation about the policy attribute.
+
 v0.3.0    2025-07-22 23:38:40+01:00 Europe/London
   [Enhancements]
   - Replaced `ucfirst` calls in the templates with a separate Entity attribute. ++leont
