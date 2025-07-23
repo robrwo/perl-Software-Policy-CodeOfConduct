@@ -165,7 +165,7 @@ has text_columns => (
     default => 78,
 );
 
-=attr text
+=method text
 
 This is the text generated from the template.
 

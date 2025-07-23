@@ -72,10 +72,6 @@ This is the number of text columns for word-wrapping the ["text"](#text).
 
 The default is `78`.
 
-## text
-
-This is the text generated from the template.
-
 ## filename
 
 This is the file to be generated.
@@ -83,6 +79,10 @@ This is the file to be generated.
 This defaults to `CODE_OF_CONDUCT.md`.
 
 # METHODS
+
+## text
+
+This is the text generated from the template.
 
 ## save
 
