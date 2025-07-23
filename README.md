@@ -122,6 +122,10 @@ then see `SECURITY.md` for instructions how to report security vulnerabilities.
 
 Robert Rothenberg <rrwo@cpan.org>
 
+# CONTRIBUTOR
+
+Leon Timmermans <leont@cpan.org>
+
 # COPYRIGHT AND LICENSE
 
 This software is Copyright (c) 2025 by Robert Rothenberg.
