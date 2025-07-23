@@ -174,6 +174,7 @@ This is the text generated from the template.
 has text => (
     is      => 'lazy',
     isa     => NonEmptyStr,
+    init_arg => undef,
     builder => sub($self) {
         state $c = 1;
         my $pkg = __PACKAGE__ . "::Run_" . $c++;
