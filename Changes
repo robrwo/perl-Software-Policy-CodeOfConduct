@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Documentation]
+  - Reorganised POD.
 
 v0.4.0    2025-07-24 12:57:39+01:00 Europe/London
   [Enhancements]

@@ -98,11 +98,6 @@ This saves a file named ["filename"](#filename) in directory `$dir`.
 
 If `$dir` is omitted, then it will save the file in the current directory.
 
-# SOURCE
-
-The development version is on github at [https://github.com/robrwo/perl-Software-Policy-CodeOfConduct](https://github.com/robrwo/perl-Software-Policy-CodeOfConduct)
-and may be cloned from [git://github.com/robrwo/perl-Software-Policy-CodeOfConduct.git](git://github.com/robrwo/perl-Software-Policy-CodeOfConduct.git)
-
 # SUPPORT
 
 Only the latest version of this module will be supported.
@@ -121,6 +116,11 @@ feature.
 
 If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
 then see `SECURITY.md` for instructions how to report security vulnerabilities.
+
+# SOURCE
+
+The development version is on github at [https://github.com/robrwo/perl-Software-Policy-CodeOfConduct](https://github.com/robrwo/perl-Software-Policy-CodeOfConduct)
+and may be cloned from [git://github.com/robrwo/perl-Software-Policy-CodeOfConduct.git](git://github.com/robrwo/perl-Software-Policy-CodeOfConduct.git)
 
 # AUTHOR
 
