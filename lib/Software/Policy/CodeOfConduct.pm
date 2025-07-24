@@ -69,16 +69,12 @@ has policy => (
 
 This is the (optional) name of the project that the code of conduct is for,
 
-=attr has_name
-
-True if there is a name.
-
 =cut
 
 has name => (
-    is        => 'ro',
-    isa       => Maybe [NonEmptySimpleStr],
-    predicate => 1,
+    is      => 'ro',
+    isa     => Maybe [NonEmptySimpleStr],
+    default => sub { return undef },
 );
 
 =attr contact
@@ -183,7 +179,7 @@ has fulltext => (
             STRICT  => 1,
             BROKEN  => sub(%args) { die $args{error} },
             HASH    => {
-                name    => $self->name,
+                name    => $self->name // "",
                 contact => $self->contact,
                 entity  => $self->entity,
                 Entity  => $self->Entity,

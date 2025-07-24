@@ -42,10 +42,6 @@ If you want to use a custom policy, specify the ["template\_path"](#template_pat
 
 This is the (optional) name of the project that the code of conduct is for,
 
-## has\_name
-
-True if there is a name.
-
 ## contact
 
 The is the contact for the project team about the code of conduct. It should be an email address or a URL.

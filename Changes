@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Fixed a bug when omitting the name.
+
+  - Removed unused `has_name` method.
+
   [Documentation]
   - Reorganised POD.
 
