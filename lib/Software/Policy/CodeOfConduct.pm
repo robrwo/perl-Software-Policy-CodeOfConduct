@@ -18,6 +18,12 @@ use namespace::autoclean;
 
 our $VERSION = 'v0.4.2';
 
+=begin :prelude
+
+=for stopwords fulltext
+
+=end :prelude
+
 =head1 SYNOPSIS
 
     my $policy = Software::Policy::CodeOfConduct->new(
