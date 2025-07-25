@@ -10,7 +10,7 @@ use File::ShareDir qw( dist_file );
 use Path::Tiny 0.018 qw( cwd path );
 use Text::Template 1.48;
 use Text::Wrap    qw( wrap $columns );
-use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveInt );
+use Types::Common qw( InstanceOf Maybe NonEmptyStr NonEmptySimpleStr PositiveOrZeroInt );
 
 use experimental qw( lexical_subs signatures );
 
@@ -157,13 +157,15 @@ has _template => (
 
 This is the number of text columns for word-wrapping the L</text>.
 
+A value of C<0> disables word wrapping.
+
 The default is C<78>.
 
 =cut
 
 has text_columns => (
     is      => 'ro',
-    isa     => PositiveInt,
+    isa     => PositiveOrZeroInt,
     default => 78,
 );
 
@@ -194,6 +196,7 @@ has fulltext => (
 
         $columns = $self->text_columns;
         my sub _wrap($line) {
+            return $line unless $columns;
             return $line if $line =~ /^[ ]{4}/; # ignore preformatted code
             return wrap( "", $line =~ /^[\*\-](?![\*\-]) ?/ ? "  " : "", $line =~ s/[ ][ ]+/ /gr );
         }

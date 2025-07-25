@@ -66,6 +66,8 @@ This should be a [Text::Template](https://metacpan.org/pod/Text%3A%3ATemplate) t
 
 This is the number of text columns for word-wrapping the ["text"](#text).
 
+A value of `0` disables word wrapping.
+
 The default is `78`.
 
 ## filename

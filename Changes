@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Setting text_columns to 0 will disable word wrapping.
+
   [Tests]
   - Add more author tests.
 

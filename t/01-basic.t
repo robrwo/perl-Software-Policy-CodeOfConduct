@@ -18,7 +18,7 @@ for my $file (qw( Contributor_Covenant_1.4 Contributor_Covenant_2.0 Contributor_
     subtest $file => sub {
 
         ok my $policy =
-          Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com', name => "Bogomip", policy => $file ),
+          Software::Policy::CodeOfConduct->new( contact => 'bogon@example.com', name => "Bogomip", policy => $file, text_columns => 0 ),
         'constructor';
 
         ok $policy->template_path, "template_path";
