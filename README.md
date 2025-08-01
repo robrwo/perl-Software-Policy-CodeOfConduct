@@ -2,10 +2,6 @@
 
 Software::Policy::CodeOfConduct - generate a Code of Conduct policy
 
-# VERSION
-
-version v0.5.0
-
 # SYNOPSIS
 
 ```perl
@@ -23,78 +19,63 @@ $policy->save($dir); # create CODE-OF-CONDUCT.md in $dir
 
 This distribution generates code of conduct policies from a template.
 
-# ATTRIBUTES
+# RECENT CHANGES
 
-## policy
+Changes for version v0.5.1 (2025-08-01)
 
-This is the policy filename without the extension. It defaults to "Contributor\_Covenant\_1.4"
-.
+- Documentation
+    - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
 
-Available policies include
+See the `Changes` file for more details.
 
-- [Contributor\_Covenant\_1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html)
-- [Contributor\_Covenant\_2.0](https://www.contributor-covenant.org/version/2/0/code-of-conduct.html)
-- [Contributor\_Covenant\_2.1](https://www.contributor-covenant.org/version/2/1/code-of-conduct.html)
+# REQUIREMENTS
 
-If you want to use a custom policy, specify the ["template\_path"](#template_path).
+This module lists the following modules as runtime dependencies:
 
-## name
+- [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
+- [Moo](https://metacpan.org/pod/Moo) version 1.006000 or later
+- [Path::Tiny](https://metacpan.org/pod/Path%3A%3ATiny) version 0.119 or later
+- [Text::Template](https://metacpan.org/pod/Text%3A%3ATemplate) version 1.48 or later
+- [Text::Wrap](https://metacpan.org/pod/Text%3A%3AWrap)
+- [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
+- [experimental](https://metacpan.org/pod/experimental)
+- [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
+- [perl](https://metacpan.org/pod/perl) version v5.20.0 or later
 
-This is the (optional) name of the project that the code of conduct is for,
+See the `cpanfile` file for the full list of prerequisites.
 
-## contact
+# INSTALLATION
 
-The is the contact for the project team about the code of conduct. It should be an email address or a URL.
+The latest version of this module (along with any dependencies) can be installed from [CPAN](https://www.cpan.org) with the `cpan` tool that is included with Perl:
 
-It is required.
-
-## entity
-
-A generating name for the project. It defaults to "project" but the original templates used "community".
-
-## Entity
-
-A sentence-case (ucfirst) form of ["entity"](#entity).
-
-## template\_path
-
-This is the path to the template file. If omitted, it will assume it is an included file from ["policy"](#policy).
-
-This should be a [Text::Template](https://metacpan.org/pod/Text%3A%3ATemplate) template file.
-
-## text\_columns
-
-This is the number of text columns for word-wrapping the ["text"](#text).
-
-A value of `0` disables word wrapping.
-
-The default is `78`.
-
-## filename
-
-This is the file to be generated.
-
-This defaults to `CODE_OF_CONDUCT.md`.
-
-# METHODS
-
-## fulltext
-
-This is the text generated from the template.
-
-## text
-
-This is a deprecated alias for ["fulltext"](#fulltext).
-
-## save
-
-```perl
-my $path = $policy->save( $dir );
+```
+cpan Software::Policy::CodeOfConduct
 ```
 
-This saves a file named ["filename"](#filename) in directory `$dir`.
+You can also extract the distribution archive and install this module (along with any dependencies):
 
-If `$dir` is omitted, then it will save the file in the current directory.
+```
+cpan .
+```
+
+You can also install this module manually using the following commands:
+
+```
+perl Makefile.PL
+make
+make test
+make install
+```
+
+If you are working with the source repository, then it may not have a `Makefile.PL` file.  But you can use the [Dist::Zilla](https://dzil.org/) tool in anger to build and install this module:
+
+```
+dzil build
+dzil test
+dzil install --install-command="cpan ."
+```
+
+For more information, see the `INSTALL` file included with this distribution.
 
 # SUPPORT
 
@@ -125,8 +106,6 @@ and may be cloned from [git://github.com/robrwo/perl-Software-Policy-CodeOfCondu
 Robert Rothenberg <rrwo@cpan.org>
 
 # CONTRIBUTOR
-
-Leon Timmermans <leont@cpan.org>
 
 # COPYRIGHT AND LICENSE
 

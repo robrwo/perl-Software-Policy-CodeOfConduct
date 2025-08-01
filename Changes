@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}:
 
 {{$NEXT}}
+  [Documentation]
+  - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
 
 v0.5.0    2025-07-25 09:37:17+01:00 Europe/London
   [Enhancements]
