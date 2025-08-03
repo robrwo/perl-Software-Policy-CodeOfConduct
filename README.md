@@ -21,7 +21,7 @@ This distribution generates code of conduct policies from a template.
 
 # RECENT CHANGES
 
-Changes for version v0.5.1 (2025-08-01)
+Changes for version v0.5.1 (2025-08-03)
 
 - Documentation
     - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
