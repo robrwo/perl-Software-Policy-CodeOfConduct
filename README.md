@@ -25,6 +25,8 @@ Changes for version v0.5.1 (2025-08-01)
 
 - Documentation
     - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
+- Toolchain
+    - Improve Dist::Zilla configuration.
 
 See the `Changes` file for more details.
 
