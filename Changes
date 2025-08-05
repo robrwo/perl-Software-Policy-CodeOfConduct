@@ -4,6 +4,8 @@ Revision history for {{$dist->name}}:
   [Documentation]
   - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
 
+  - Remove separate INSTALL file.
+
   [Toolchain]
   - Improve Dist::Zilla configuration.
 

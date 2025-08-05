@@ -21,10 +21,11 @@ This distribution generates code of conduct policies from a template.
 
 # RECENT CHANGES
 
-Changes for version v0.5.1 (2025-08-03)
+Changes for version v0.5.1 (2025-08-05)
 
 - Documentation
     - README is generated using Dist::Zilla::Plugin::UsefulReadmme.
+    - Remove separate INSTALL file.
 - Toolchain
     - Improve Dist::Zilla configuration.
 
@@ -77,7 +78,7 @@ dzil test
 dzil install --install-command="cpan ."
 ```
 
-For more information, see the `INSTALL` file included with this distribution.
+For more information, see [How to install CPAN modules](https://www.cpan.org/modules/INSTALL.html).
 
 # SUPPORT
 
